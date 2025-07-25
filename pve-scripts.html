@@ -229,6 +229,21 @@
     </section>
 
     <section>
+      <h2>🔗 tailscale-subnet-router.sh</h2>
+      <p>Automatically creates an unprivileged Ubuntu 22.04 LXC container on Proxmox and configures it as a <a href="https://tailscale.com/kb/1019/subnets" target="_blank" rel="noopener noreferrer">Tailscale subnet router</a>.</p>
+      <ul>
+        <li>Just copy &amp; paste the install command into your Proxmox VE shell.</li>
+        <li>Follow the instructions to complete the setup.</li>
+        <li>Once installed, you can access the entire subnet behind the LXC via Tailscale.</li>
+        <li><strong>⚠️ Important:</strong> You must approve the new subnet route manually in the <a href="https://login.tailscale.com/admin/machines" target="_blank" rel="noopener noreferrer">Tailscale Admin Panel</a> after setup.</li>
+      </ul>
+      <div class="copy-container">
+        <pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/And-rix/pve-scripts/refs/heads/main/tailscale-subnet-router.sh)"</code></pre>
+        <button class="copy-btn">📋 Copy</button>
+      </div>
+    </section>
+
+    <section>
       <h2>⚙️ vdsm-arc-install.sh</h2>
       <p>Automated installer for <strong>vDSM.Arc Loader</strong> by <a href="https://github.com/AuxXxilium" target="_blank" rel="noopener noreferrer">AuxXxilium</a> on your Proxmox VE host.</p>
       <ul>
@@ -244,6 +259,7 @@
           <code>dir</code>, <code>btrfs</code>, <code>nfs</code>, <code>cifs</code>, <code>lvm</code>, <code>lvmthin</code>, <code>zfs</code>, <code>zfspool</code>
         </li>
       </ul>
+      <p>ℹ️<em> This script is also included in <strong>vdsm-arc-toolkit.sh</strong>.</em></p>
       <div class="copy-container">
         <pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/And-rix/pve-scripts/refs/heads/main/vdsm-arc-install.sh)"</code></pre>
         <button class="copy-btn">📋 Copy</button>
@@ -258,6 +274,7 @@
         <li>vDSM.Arc is mapped as SATA0</li>
         <li>Backs up old boot disk as “unused disk”</li>
       </ul>
+      <p>ℹ️<em> This script is also included in <strong>vdsm-arc-toolkit.sh</strong>.</em></p>
       <div class="copy-container">
         <pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/And-rix/pve-scripts/refs/heads/main/vdsm-arc-update.sh)"</code></pre>
         <button class="copy-btn">📋 Copy</button>
@@ -272,23 +289,9 @@
           <code>dir</code>, <code>btrfs</code>, <code>nfs</code>, <code>cifs</code>, <code>lvm</code>, <code>lvmthin</code>, <code>zfs</code>, <code>zfspool</code>
         </li>
       </ul>
+      <p>ℹ️<em> This script is also included in <strong>vdsm-arc-toolkit.sh</strong>.</em></p>
       <div class="copy-container">
         <pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/And-rix/pve-scripts/refs/heads/main/vm-disk-update.sh)"</code></pre>
-        <button class="copy-btn">📋 Copy</button>
-      </div>
-    </section>
-
-    <section>
-      <h2>🔗 tailscale-subnet-router.sh</h2>
-      <p>Automatically creates an unprivileged Ubuntu 22.04 LXC container on Proxmox and configures it as a <a href="https://tailscale.com/kb/1019/subnets" target="_blank" rel="noopener noreferrer">Tailscale subnet router</a>.</p>
-      <ul>
-        <li>Just copy &amp; paste the install command into your Proxmox VE shell.</li>
-        <li>Follow the instructions to complete the setup.</li>
-        <li>Once installed, you can access the entire subnet behind the LXC via Tailscale.</li>
-        <li><strong>⚠️ Important:</strong> You must approve the new subnet route manually in the <a href="https://login.tailscale.com/admin/machines" target="_blank" rel="noopener noreferrer">Tailscale Admin Panel</a> after setup.</li>
-      </ul>
-      <div class="copy-container">
-        <pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/And-rix/pve-scripts/refs/heads/main/tailscale-subnet-router.sh)"</code></pre>
         <button class="copy-btn">📋 Copy</button>
       </div>
     </section>
