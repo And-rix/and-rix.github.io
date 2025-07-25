@@ -247,7 +247,6 @@
       <div class="copy-container">
         <pre><code>https://raw.githubusercontent.com/And-rix/shelly-scripts/refs/heads/main/internet-watchdog.js</code></pre>
         <button class="show-btn">👀 Show</button>
-        <button class="copy-btn">📋 Copy</button>
       </div>
     </section>
 
@@ -262,7 +261,6 @@
       <div class="copy-container">
         <pre><code>https://raw.githubusercontent.com/And-rix/shelly-scripts/refs/heads/main/internet-watchdog-telegram.js</code></pre>
         <button class="show-btn">👀 Show</button>
-        <button class="copy-btn">📋 Copy</button>
       </div>
     </section>
   </main>
@@ -275,25 +273,9 @@
     document.querySelectorAll('section').forEach(section => {
     const url = section.querySelector('pre code').textContent.trim();
     const showBtn = section.querySelector('.show-btn');
-    const copyBtn = section.querySelector('.copy-btn');
 
     showBtn.addEventListener('click', () => {
       window.open(url, '_blank');
-    });
-
-    copyBtn.addEventListener('click', async () => {
-      copyBtn.textContent = '⌛ Loading...';
-      try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('Failed to fetch script');
-        const code = await response.text();
-        await navigator.clipboard.writeText(code);
-        copyBtn.textContent = '✅ Copied!';
-      } catch (e) {
-        copyBtn.textContent = '❌ Error';
-        console.error(e);
-      }
-      setTimeout(() => (copyBtn.textContent = '📋 Copy'), 1500);
     });
   });
   </script>
