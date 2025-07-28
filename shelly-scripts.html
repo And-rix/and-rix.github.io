@@ -34,28 +34,33 @@ License: /LICENSE
   </header>
   <main>
     <section>
-      <h2>📡 internet-watchdog.js</h2>
-      <p>This script periodically check your internet connectivity. If a customized failure count reached, it will reboot the router.</p>
+      <h2>📡 router-watchdog.js</h2>
+      <p>
+        This script periodically checks your internet connectivity. If a specified number of consecutive failures is reached, it automatically reboots the connected router.
+      </p>
       <ul>
-        <li><strong>Auto restart:</strong> Detect internet outages and reboot the connected router when necessary.</li>
-        <li><strong>Customizable:</strong> You can enter your own limits.</li>
+        <li><strong>Automatic recovery:</strong> Detects internet outages and reboots your router when needed.</li>
+        <li><strong>Fully configurable:</strong> All thresholds and timings can be customized.</li>
+        <li><strong>Telegram support:</strong> Optional built-in Telegram notifications when the connection is restored.</li>
       </ul>
       <div class="copy-container">
-        <pre><code>https://raw.githubusercontent.com/And-rix/shelly-scripts/refs/heads/main/internet-watchdog.js</code></pre>
+        <pre><code>https://raw.githubusercontent.com/And-rix/shelly-scripts/refs/heads/main/router-watchdog.js</code></pre>
         <button class="copy-btn">👀 Show</button>
       </div>
     </section>
 
     <section>
-      <h2>📡 internet-watchdog-telegram.js</h2>
-      <p>This script periodically check your internet connectivity. If a customized failure count reached, it will reboot the router. When internet returns - you will receive a Telegram message.</p>
+      <h2>🧭 script-watchdog.js</h2>
+      <p>
+        This script monitors another script by its ID and ensures it stays running. If the target script stops unexpectedly, it will be restarted automatically.
+      </p>
       <ul>
-        <li><strong>Auto restart:</strong> Detect internet outages and reboot the connected router when necessary.</li>
-        <li><strong>Customizable:</strong> You can enter your own limits.</li>
-        <li><strong>Telegram:</strong> You need to setup Botfather Telegram Bot by your own.</li>
+        <li><strong>Script monitoring:</strong> Keeps a specified script alive by checking its status periodically.</li>
+        <li><strong>Automatic restart:</strong> Restarts the monitored script if it crashes or is stopped.</li>
+        <li><strong>Optional Telegram alert:</strong> Can notify you if a restart is triggered (configurable).</li>
       </ul>
       <div class="copy-container">
-        <pre><code>https://raw.githubusercontent.com/And-rix/shelly-scripts/refs/heads/main/internet-watchdog-telegram.js</code></pre>
+        <pre><code>https://raw.githubusercontent.com/And-rix/shelly-scripts/refs/heads/main/script-watchdog.js</code></pre>
         <button class="copy-btn">👀 Show</button>
       </div>
     </section>
