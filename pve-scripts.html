@@ -1,9 +1,17 @@
+<!--
+MIT License
+Copyright (c) 2025 And-rix
+GitHub: https://github.com/And-rix
+License: /LICENSE
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>:\> pve-scripts</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <meta name="theme-color" content="#0d1117" />
@@ -11,257 +19,17 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg" type="image/svg+xml" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
-  <style>
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(-45deg, #0d1117, #161b22, #0d1117, #1f2937);
-      background-size: 400% 400%;
-      animation: gradientBG 90s ease infinite;
-      color: #c9d1d9;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      text-align: center;
-    }
-
-    header {
-      padding: 1rem 1rem 0;
-    }
-
-    nav {
-      border-bottom: 1px solid #2e2e2e;
-      padding-bottom: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 0.5rem 0 0.5rem;
-      margin: 0;
-      flex-wrap: wrap;
-    }
-
-    .nav-menu li a {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.95rem;
-      color: #58a6ff;
-      text-decoration: none;
-      padding: 0.4rem 0.75rem;
-      border-radius: 6px;
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
-
-    .nav-menu li a:hover,
-    .nav-menu li a:focus,
-    .nav-menu li a.active {
-    background-color: #1f2937;
-    color: #79b8ff;
-    }    
-
-    h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 800;
-      margin: 0;
-      color: #58a6ff;
-      text-shadow: 0 0 8px #58a6ff44;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 1rem auto;
-      color: #8b949e;
-    }
-
-    main {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 0 1rem 3rem;
-      max-width: 900px;
-      margin-inline: auto;
-      width: 100%;
-      gap: 2rem;
-    }
-
-    section {
-      background-color: #161b22;
-      border: 1px solid #2e2e2e;
-      border-radius: 8px;
-      padding: 2rem;
-      margin-inline: auto;
-      width: 90%;
-      max-width: 800px;
-      box-shadow: 0 0 10px #00000033;
-      text-align: left;
-    }
-
-    section h2 {
-      color: #58a6ff;
-      margin-top: 0;
-      margin-bottom: 1rem;
-    }
-
-    /* Alle normalen Texte in dezentes Grau */
-    body, p, li, ul, section p, section ul {
-      color: #8b949e;
-    }
-
-    section ul {
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      padding-left: 1.25rem;
-    }
-
-    .copy-container {
-      position: relative;
-      background-color: #0d1117;
-      border-radius: 6px;
-      padding: 1rem;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.95rem;
-      color: #58a6ff;
-      overflow-x: auto;
-    }
-
-    .copy-container pre {
-      margin: 0;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-
-    .copy-btn {
-      margin-top: 0.75rem;
-      background-color: #1e1e1e;
-      color: #58a6ff;
-      border: 1px solid #2e2e2e;
-      border-radius: 5px;
-      padding: 0.5em 1em;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.9rem;
-      cursor: pointer;
-      box-shadow: inset 0 0 0 1px #2e2e2e;
-      transition: all 0.3s ease;
-      display: inline-block;
-      text-align: center;
-    }
-
-    .copy-btn:hover,
-    .copy-btn:focus {
-      background-color: #2a2a2a;
-      border-color: #58a6ff;
-      outline: none;
-    }
-
-    .repo-btn {
-      margin: 1rem auto;
-      display: inline-block;
-    }    
-
-    footer {
-      font-family: 'JetBrains Mono', monospace;
-      background-color: #1e1e1e;
-      color: #6e7681;
-      padding: 1rem 0;
-      font-size: 0.85rem;
-      border-top: 1px solid #2e2e2e;
-      box-shadow: inset 0 1px 0 0 #2e2e2e;
-      position: static; /* sticky */
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-    }
-
-    /* Einheitliche Linkfarben */
-    a {
-      color: #58a6ff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:visited {
-      color: #58a6ff;
-    }
-
-    a:hover,
-    a:focus {
-      color: #79b8ff;
-      outline: none;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding-top: 3rem;
-      }
-
-      section {
-        padding: 1rem;
-        width: 95%;
-      }
-
-      .copy-btn {
-        width: 100%;
-      }
-
-      .nav-menu li a {
-        font-size: 0.8rem;
-        padding: 0.3rem 0.5rem;
-      }
-    }
-
-    /* Webkit Scrollbar Styling */
-    ::-webkit-scrollbar {
-      width: 12px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #1e1e1e;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background-color: #444;
-      border-radius: 6px;
-      border: 3px solid #1e1e1e;
-    }
-
-    /* Firefox Scrollbar Styling */
-    * {
-      scrollbar-width: thin;
-      scrollbar-color: #444 #1e1e1e;
-    }
-  </style>
 </head>
 <body>
   <header>
     <nav>
-    <ul class="nav-menu">
-        <!--<li><a href="index.html">home</a></li>-->
+      <ul class="nav-menu">
         <li><a href="pve-scripts.html" class="active">pve-scripts</a></li>
         <li><a href="shelly-scripts.html">shelly-scripts</a></li>
-    </ul>
-    </nav> 
-    <h1>pve-scripts</h1>     
-    <p><strong>Just copy &amp; paste into your PVE shell 😎</strong></p>
+      </ul>
+    </nav>
+    <h1>pve-scripts</h1>
+    <p><strong>Just copy & paste into your PVE shell 😎</strong></p>
   </header>
   <main>
     <section>
@@ -276,8 +44,57 @@
         <pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/And-rix/pve-scripts/refs/heads/main/vdsm-arc-toolkit.sh)"</code></pre>
         <button class="copy-btn">📋 Copy</button>
       </div>
+      <details>
+        <summary><strong>Show included scripts</strong></summary>
+        <section>
+          <h3>⚙️ vdsm-arc-install.sh</h3>
+          <p>Automated installer for <strong>vDSM.Arc Loader</strong></p>
+          <ul>
+            <li><strong>Default settings</strong>:
+              <ul>
+                <li>CPU: 2 cores</li>
+                <li>RAM: 4096MB</li>
+                <li>NIC: vmbr0</li>
+                <li>Storage: Selectable</li>
+              </ul>
+            </li>
+            <li><strong>Supported filesystem types</strong>:
+              <code>dir</code>, <code>btrfs</code>, <code>nfs</code>, <code>cifs</code>, <code>lvm</code>, <code>lvmthin</code>, <code>zfs</code>, <code>zfspool</code>
+            </li>
+          </ul>
+          <div class="copy-container">
+            <pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/And-rix/pve-scripts/refs/heads/main/vdsm-arc-install.sh)"</code></pre>
+            <button class="copy-btn">📋 Copy</button>
+          </div>
+        </section>
+        <section>
+          <h3>🔄 vdsm-arc-update.sh</h3>
+          <p>Automated update script for <strong>vDSM.Arc Loader</strong> on an existing VM.</p>
+          <ul>
+            <li>Replaces boot image. Rebuild of the loader is required!</li>
+            <li>vDSM.Arc is mapped as SATA0</li>
+            <li>Backs up old boot disk as “unused disk”</li>
+          </ul>
+          <div class="copy-container">
+            <pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/And-rix/pve-scripts/refs/heads/main/vdsm-arc-update.sh)"</code></pre>
+            <button class="copy-btn">📋 Copy</button>
+          </div>
+        </section>
+        <section>
+          <h3>💾 vm-disk-update.sh</h3>
+          <p>Adds additional virtual or physical disks to an existing VM on your Proxmox VE host.</p>
+          <ul>
+            <li><strong>Supported filesystem types</strong>:
+              <code>dir</code>, <code>btrfs</code>, <code>nfs</code>, <code>cifs</code>, <code>lvm</code>, <code>lvmthin</code>, <code>zfs</code>, <code>zfspool</code>
+            </li>
+          </ul>
+          <div class="copy-container">
+            <pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/And-rix/pve-scripts/refs/heads/main/vm-disk-update.sh)"</code></pre>
+            <button class="copy-btn">📋 Copy</button>
+          </div>
+        </section>
+      </details>
     </section>
-
     <section>
       <h2>🔗 tailscale-subnet-router.sh</h2>
       <p>Automatically creates an unprivileged Ubuntu 22.04 LXC container on Proxmox and configures it as a <a href="https://tailscale.com/kb/1019/subnets" target="_blank" rel="noopener noreferrer">Tailscale subnet router</a>.</p>
@@ -292,60 +109,6 @@
         <button class="copy-btn">📋 Copy</button>
       </div>
     </section>
-
-    <section>
-      <h2>⚙️ vdsm-arc-install.sh</h2>
-      <p>Automated installer for <strong>vDSM.Arc Loader</strong> by <a href="https://github.com/AuxXxilium" target="_blank" rel="noopener noreferrer">AuxXxilium</a> on your Proxmox VE host.</p>
-      <ul>
-        <li><strong>Default settings</strong>:
-          <ul>
-            <li>CPU: 2 cores</li>
-            <li>RAM: 4096MB</li>
-            <li>NIC: vmbr0</li>
-            <li>Storage: Selectable</li>
-          </ul>
-        </li>
-        <li><strong>Supported filesystem types</strong>:
-          <code>dir</code>, <code>btrfs</code>, <code>nfs</code>, <code>cifs</code>, <code>lvm</code>, <code>lvmthin</code>, <code>zfs</code>, <code>zfspool</code>
-        </li>
-      </ul>
-      <p>ℹ️<em> This script is also included in <strong>vdsm-arc-toolkit.sh</strong>.</em></p>
-      <div class="copy-container">
-        <pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/And-rix/pve-scripts/refs/heads/main/vdsm-arc-install.sh)"</code></pre>
-        <button class="copy-btn">📋 Copy</button>
-      </div>
-    </section>
-
-    <section>
-      <h2>🔄 vdsm-arc-update.sh</h2>
-      <p>Automated update script for <strong>vDSM.Arc Loader</strong> on an existing VM.</p>
-      <ul>
-        <li>Replaces boot image. Rebuild of the loader is required!</li>
-        <li>vDSM.Arc is mapped as SATA0</li>
-        <li>Backs up old boot disk as “unused disk”</li>
-      </ul>
-      <p>ℹ️<em> This script is also included in <strong>vdsm-arc-toolkit.sh</strong>.</em></p>
-      <div class="copy-container">
-        <pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/And-rix/pve-scripts/refs/heads/main/vdsm-arc-update.sh)"</code></pre>
-        <button class="copy-btn">📋 Copy</button>
-      </div>
-    </section>
-
-    <section>
-      <h2>💾 vm-disk-update.sh</h2>
-      <p>Adds additional virtual or physical disks to an existing VM on your Proxmox VE host.</p>
-      <ul>
-        <li><strong>Supported filesystem types</strong>:
-          <code>dir</code>, <code>btrfs</code>, <code>nfs</code>, <code>cifs</code>, <code>lvm</code>, <code>lvmthin</code>, <code>zfs</code>, <code>zfspool</code>
-        </li>
-      </ul>
-      <p>ℹ️<em> This script is also included in <strong>vdsm-arc-toolkit.sh</strong>.</em></p>
-      <div class="copy-container">
-        <pre><code>bash -c "$(curl -fsSL https://raw.githubusercontent.com/And-rix/pve-scripts/refs/heads/main/vm-disk-update.sh)"</code></pre>
-        <button class="copy-btn">📋 Copy</button>
-      </div>
-    </section>
-
     <section>
       <h2>💻 laptop-hibernation.sh</h2>
       <p>Disables all hibernation modes to allow Proxmox VE to run smoothly on a laptop.</p>
@@ -354,19 +117,15 @@
         <button class="copy-btn">📋 Copy</button>
       </div>
     </section>
-    
     <div class="repo-btn">
       <a href="https://github.com/And-rix/pve-scripts" target="_blank" rel="noopener noreferrer" class="copy-btn">
         🌐 View GitHub Repository
       </a>
     </div>
-
   </main>
-
   <footer>
     &copy; 2025 <a href="https://and-rix.github.io">And-rix</a>
   </footer>
-
   <script>
     document.querySelectorAll('.copy-btn').forEach(btn => {
       btn.addEventListener('click', () => {
