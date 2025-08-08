@@ -85,13 +85,17 @@ License: /LICENSE
   
   <script>
     document.querySelectorAll('section').forEach(section => {
-    const url = section.querySelector('pre code').textContent.trim();
-    const showBtn = section.querySelector('.copy-btn');
+      const urlElement = section.querySelector('pre code');
+      const showBtn = section.querySelector('.copy-btn');
 
-    showBtn.addEventListener('click', () => {
-      window.open(url, '_blank');
+      if (urlElement && showBtn) {
+        const url = urlElement.textContent.trim();
+
+        showBtn.addEventListener('click', () => {
+          window.open(url, '_blank');
+        });
+      }
     });
-  });
   </script>
 </body>
 </html>
