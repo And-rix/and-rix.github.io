@@ -15,9 +15,14 @@ License: /LICENSE
   box-sizing: border-box;
 }
 
+html {
+  background: #0d1117;
+}
+
 html, body {
   margin: 0;
   padding: 0;
+  overscroll-behavior: none;
 }
 
 body {
